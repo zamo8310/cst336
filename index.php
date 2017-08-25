@@ -6,7 +6,7 @@
     </head>
     <body>
         
-        <hl> Welcome to Victoria's CST 336 Webside</hl>
+        <hl> Welcome to Victoria's CST 336 Website!</hl>
         
 
     </body>

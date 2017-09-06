@@ -1,0 +1,106 @@
+body {
+    background-color:black;
+    color:white;
+    font-family: 'Aldrich';
+}
+
+div.transbox {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.7;
+  filter: alpha(opacity=70); /* For IE8 and earlier */
+}
+
+.background {
+  background: url(https://www.ancient-code.com/wp-content/uploads/2015/12/biomedicine.jpg);
+  border: 2px solid black;
+}
+
+div.transbox p {
+  margin: 4.5%;
+  font-weight: bold;
+  font-size: 19px;
+  color: #000000;
+}
+
+h1{
+    font-family: 'Aldrich';
+    color: #00ffff;
+    font-size: 4em;
+    margin-bottom: 0px;
+}
+
+#currentView{
+    
+    border-bottom: thin dotted #00ff00;
+}
+
+
+ header, nav, footer, main {
+    text-align: center;
+}
+
+
+.topNav a{  /*links within "nav" container */
+
+    padding: 14px 16px;
+    padding-bottom:4px;
+    font-size: 2em;
+    text-decoration: none;  /*removes underline */
+    color: white;
+}
+
+.topNav a:hover {    /*pseudo class*/
+  border-bottom:2px orange solid;
+  font-size: 3em;
+  transition: .9s;    /* transition effect */
+}
+
+#me, #welcomeText{
+    float:left;
+}
+
+#welcomeText{
+    text-align: left;
+}
+
+footer{
+    color:white;
+    font-size: .9em;
+    clear:left;
+}
+
+table{
+    margin: 0px auto;
+}
+
+td{
+    padding-right: 10px;
+    font-size: 1.3em;
+}
+
+td strong{
+    color: orange;
+}
+
+#table-header{
+    background-color: #351a00;
+}
+
+.table-row{
+    background-color: #753900;
+}
+
+ul{
+    display: block;
+    text-align: left;
+    padding-left: 200px;
+}
+
+.hobby{
+    color:white;
+}
+
+* {box-sizing:border-box}
+

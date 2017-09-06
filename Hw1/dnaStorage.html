@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<!--
+
+First Website
+and comment
+in html
+(comments can span multiple lines)
+
+-->
+
+<!-- This is the head -->
+<!-- All styles and javascript go inside the head -->
+    <head>
+        <meta char=”utf-8” /> 
+        <title> Victoria Zamora: Personal Website</title>
+      
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .mySlides {display:none;}
+        </style>
+    </head>
+<!-- closing head -->
+
+    <!-- This is the body -->
+    <!-- This is where we place the content of our website -->
+    <body>
+        <header>
+            <h1> DNA:Hard Drive</h1>
+        </header>
+        <nav class="topNav">
+            <hr width="50%"/>
+            <a href = "index.html">Home</a>
+            <a href = "timeline.html">Timeline</a>
+            <a id="currentView" href = "dnaStorage.html">DNA:Hard Drive</a>
+            <a href = "dnaComputer.html">DNA:Computer</a>
+        </nav>
+        
+        <br /><br />
+        
+        <main>
+
+          
+            <img class="mySlides" src="img/img0.png">
+            <img class="mySlides" src="img/img1.png">
+            <img class="mySlides" src="img/img2.jpg">
+            
+            <script>
+            var myIndex = 0;
+            carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 3000); // Change image every 2 seconds
+        }
+       </script>
+
+        </main>
+        
+        
+        <!-- This is the footer -->
+        <!-- The footer goes inside the body but not always -->
+        <footer>
+            <hr>
+            
+            <div id="foot">
+                CST 336: Internet Programming. 2017&copy; Zamora <br />
+                <strong>Disclaimer:</strong> The information in this webpage is factual. <br />
+                It is used for academic purposes only.
+            </div>
+            
+            
+        </footer>
+        <!-- closing footer -->
+        
+    </body>
+    <!-- closing body -->
+
+</html>

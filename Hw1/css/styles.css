@@ -41,6 +41,11 @@ h1{
     text-align: center;
 }
 
+#navView
+{
+    width: 50%;
+}
+
 
 .topNav a{  /*links within "nav" container */
 

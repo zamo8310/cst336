@@ -29,11 +29,11 @@
                     case 0: $totalPoints = 1000;
                             echo "<h1> Jackpot! </h1>";
                             break;
-                    case 1: $totalPoints = 900;
+                    case 1: $totalPoints = 250;
                             break;
                     case 2: $totalPoints = 500;
                             break;
-                    case 3: $totalPoints = 250;
+                    case 3: $totalPoints = 900;
                             break;
             }
             echo "<h2> You won $totalPoints points!</h2>";

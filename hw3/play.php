@@ -1,8 +1,5 @@
  <?php
  
-  $songs=array("twenty one pilots"=>"migraine","metallica"=>"masterOfPuppets","fun"=>"someNights", "macklemore"=>"thriftShop",
-                 "lorde"=>"whiteTeeth", "the neighbourhood"=>"sweaterWeather");
-
     function assignSong($songs,$songArr){
         for($i=0; $i<3; $i++){
             ${"randomValue".$i} = $songs[array_rand($songs)];
@@ -19,7 +16,7 @@
     function displayAsong($song) {
      
             echo  "<audio controls
-            '<source src='../hw2/music/$song.mp3' type='audio/mpeg' >'
+            '<source src='../hw3/music/$song.mp3' type='audio/mpeg' >'
                   </audio>";
           
     }

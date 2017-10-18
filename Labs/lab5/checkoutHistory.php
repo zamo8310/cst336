@@ -4,7 +4,7 @@
 function displayCheckoutHistory() {
     
  
-    include '../../../../dbConnection.php';
+    include '../../dbConnection.php';
     $conn = getDatabaseConnection();
     
     $sql = "SELECT * 

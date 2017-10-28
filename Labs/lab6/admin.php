@@ -1,52 +1,91 @@
 <?php
- 
- session_start();
- include '../../dbConnection.php';
- 
- if(isset($_SESSION['username'])){
-     
-     header("Location: index.php");
-     exit();
- }
- 
- $conn = getDatabaseConnection();
- 
- function displayUsers(){
-     
-     global $conn;
-     
-     $sql = "SELECT firstName, lastName, email, userID FROM `tc_user` ";
-     
-     $stmt = $conn->prepare($sql);
-     $stmt->execute();
-     $record= $stmt->fetch(PDO::FETCH_ASSOC);
-     
-     foreach ($records as $record){
-         echo $record['firstName'] . " " . $record['lastName'] . " " .  $record['email'] . " " . $record['userID'] . "<br>";
-     }
- }
+session_start();
+
+if (!isset($_SESSION['username'])) { //checks whether admin has logged in
+    
+    header("Location: index.php");
+    exit();
+    
+}
+
+include '../../dbConnection.php';
+$conn = getDatabaseConnection();
 
 
+function displayUsers() {
+    global $conn;
+    $sql = "SELECT * 
+            FROM tc_user
+            ORDER BY lastName";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $users = $statement->fetchAll(PDO::FETCH_ASSOC);
+    //print_r($users);
+    return $users;
+}
 
 ?>
-
-
-
 <!DOCTYPE html>
 <html>
     <head>
-        <title> TCP ADMIN PAGE </title>
+        <title>Admin Page </title>
+        <script>
+            
+            function confirmDelete(firstName) {
+                
+                
+                return confirm("Are you sure you want to delete " + firstName + "?");
+                
+            }
+            
+            
+        </script>
     </head>
     <body>
 
-     <h1> TCP Admin Page </h1>
-     <h2> Welcome <?=$_SESSION['adminFullName']?>! </h2>
-
-
-    <hr>
-    
-    <?=displayUsers()?>
-    
-    
-    </body>
+        <h1> TCP ADMIN PAGE </h1>
+        <h2> Welcome <?=$_SESSION['adminFullName']?>! </h2>
+        
+        <hr>
+        
+        <form action="addUser.php">
+            
+            <input type="submit" value="Add new User" />
+            
+        </form>
+        
+          <form action="logout.php">
+            
+            <input type="submit" value="Logout" />
+            
+        </form>
+        
+        
+        <br /><br />
+        
+        <?php
+        
+        $users =displayUsers();
+        
+        foreach($users as $user) {
+            
+            echo $user['userId'];
+            echo "[<a href='userInfo.php?userId=".$user['userId']."'>" . $user['firstName'] . "  " . $user['lastName'] ."</a>]";
+            echo "[<a href='updateUser.php?userId=".$user['userId']."'> Update </a> ]";
+            //echo "[<a href='deleteUser.php?userId=".$user['userId']."'> Delete </a> ]";
+            echo "<form action='deleteUser.php' style='display:inline' onsubmit='return confirmDelete(\"".$user['firstName']."\")'>
+                     <input type='hidden' name='userId' value='".$user['userId']."' />
+                     <input type='submit' value='Delete'>
+                  </form>
+                ";
+            
+            echo "<br />";
+            
+        }
+        
+        
+        
+        ?>
+        
+    </body>     
 </html>

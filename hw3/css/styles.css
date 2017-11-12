@@ -66,6 +66,10 @@ nav{
     margin-bottom: 0px;
 }
 
+h2{
+    color:white;
+}
+
 body {
     background-image: url("../img/backDrop.jpg");
     /*text-align: center;*/

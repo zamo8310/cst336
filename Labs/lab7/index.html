@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Hangman</title>
+        
         <link  href="css/styles.css" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -10,6 +11,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
         
         
         
@@ -20,7 +22,8 @@
 
         <div class='container text-center'>
             <header>
-               <h1>Hangman</h1>
+               <h1> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOJSURBVFhH5ZhNSFRRGIYVIyy0WmQ/JBREmxZRQUREIKSQthGsFlEhgUguooVBSJuKaBGFERRWhC3CQKyWJi4kiVqEUdpCgmgRWZt+zH4sHXvOPa9Xr+femVHnjlEPvJw73/d+33ccnTP3mvNPMzY2lp9IJNajHVxXsh5GB1EF2kpsDcqVPTsweAM6i3rQbzaQFDxfUDuq4+VStck8NC9hyENv6gyh/ge6hlaq7eyh2SJ6N9sRmYGeg6hGI2YOTVahXvXNOPS+ypKncdOD4iL0yraKD2Zc0cj0oS6Xwk7bIn6YdUSj04OCWtVmBeYNodUanxz8BZjf29Ks0qwtJCfb7944zB1GqY8fTI9Vk3WYXa9thGN+AjQqf9Zhdre2Eg6GKnnnBOb/ZJmv7bhgOGOtQYifRmVSDWpBQ0qnBO8Auoz287KUdTe6Y7MOG7UdF4puyORD7LXSAYibP4cW2UIhP4Ia0AKV+RArli0A8SpZXEjelc+H2AulQyHfKGsA4gmWStkcyC32jFOg7KgsLuS7rG0CCvqVDgVLHp5n1j0BsUZZQsGywjodTsjiQtMemXyImV9ToSyhkN8juwevf6FlSodCvlz2AMRPyuJCsl2+AMQPyBIKFnNn/d26PX+nUpHguSl7AOLRt2Ekm+QLQPwlS/THH8g/9cyA/6LCoZBfi4ZlD0B8l2wu5PdamwuFZvORzxfku63T855T2IF0AfJ/mMlQZ87BAlldMBSiQWt3IXcPFcsegLj/QeH6ksIBiG9BfbI5kGuTNRpMp+QPhbx5rmhFtaiMkDl465H/Fcn1W5ZqZHLl6DjXXazm6AnF5GCTthENJvMuxn4nPRVmNmkLqcG8GX1Tbeww6znLQo1PDwrMr8c/OlKBtxd9NcNQyuflcfD2o+UaOz0o3IY+qFckeAzbufzMehtdsJnk4HvEMruHeZqYm4IHtmU45FuNl0tvg6xLWD96yRDIjaLzXCY9W9OGRuYp7xgy55QD8UMs81jNJ9w7Kljv22wQ4gMspV7jTENz83+ZT3bUBMTM3573oMVq3p03aMRLToLYE1SkdvHAAPOrmSklahMfbNB8j0YeuFFQ0qcW8cOwDs1NG2rqVB4/DNupuWmB33z1Te8gni0MvWXHJwefoUJl2YPZ5ia1zW4jHPLmnq9aJXMDm9iHOpD/3c31O3QdrZPt74ANFbK/fL38H8jJ+QORKMHSZKh6WgAAAABJRU5ErkJggg=="> H a n g m a n <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPpSURBVFhHxZhbiE1RGMeHmZFLY1xqlGsuD25JHgwN5RZClIjiTShJeWA0KZcXl6dBoYQITzy4jheJokRNkWikaFCujZoRYsbvW+vfNmfOmdlrn5kz51f/1l7f9/2/teac2fuscwpCaWlpWdDc3HwJ1aO/zFsYG9FjdBTNJ1So8u6Dhfujq7ahOKj7gKrQYDQWLUQr0Ew0gpIeats10LCYxvfc6l0AvewPOIWWMu38Zmm01bfOCU9so1oqO2jwSs1yBmtcYRioJcPBONq3SAa+OrQNTUYlhHoxjkBz0SH02lf+h9hzq9HSYWBYJH8weG4z9FWLjJAvom4DeudMgvlThlKVxYNhpbeGQX09Q/AC1Jeh+97tYX5N6XgoXihfENTvkTUYbPb23/EdPMzXKN0xFI6TJwjq18uaCKyleF/4Lq5PHUNPpTNDwQIbKf7kXAFQW+nMWYB3sdo4mK9Q6j8EJ6Gl6DB6odhNeWKh9q5rlCX4H6iV9bqosEuUoBrlIogNY9jkZ2Hgmaa2icEbfShw/VFhlziheFt2kbPP4UbNY6H2IUNWBwZ8410TQS//XOTig2IpED+t/FmFQtnlGicEnz0ff/sWbv1yl+hgg9XKT0HueBUCtX/Qctc8IdgbfBfXx39Oc3FcsQhizQxzXAEwPeMzYVDfhPwrEAi2Hnh++A4Ovz5Bu0luKGjNf6HtLimYD0dNKgmC+q+oQi1ioTbls5/5RKU8FkB2wCxTKAXiVfIGg+cHCnq7qdsim4P5UKXCwFOIKfHhFY/9T+7jslit0iDfD6Uc7ZjvVjocTKPQN/VIBD777jJbrSJI2UddpufwW4bkp26Mq5DdRFmB9RHaj9Yx3cuY8SlikEt0o0Vg3KkeOcX+EC2ZHMwH1CdnsMYtLRcOvgEYNzLac+uc65Qj6P9ay4aBYRC+JzLbndmTsdrmOaJBS7cPG+iDKtASVCujg/lm1exAWd847UHLz24T7UHBDGS3eybslYy+g1C3Fn33qa6Bfs/UPh2S9spl3BzxWjRIpRGkxhCPDp6dhV4n1Tod8rN8WToYF6ssDdJFyJ5vP11xJ6BH+5/l5DvaYOwhgLKR1J1HwUe11uC7rFaZoaY3RWlvMbE3DL1VFgu1U/FcQK2PUh1CrX1fjv+OTWG5NuSwazRd6URgL0Wb8NegL65hG4i/QnaqKZItHortlbTHTIVdKxwEnnnoCDqDKlH0+wu97Iayn1dWM9oxb7RS3QMLZnw2EnqJ5qssP7CBIeiX9tSWgyrLH2wu5ZeC1pBbprL8wSYmaj9pkJugsvzCRtJ+NiF2Xen8w2bs2+Ix9F6y6xKlAyko+AeQJs6T7kixCAAAAABJRU5ErkJggg=="></h1>
+               
             </header>
             
             <div id="word"></div>
@@ -38,84 +41,19 @@
             </div>
         </div>
 
-    <script>
-    
-            $("#letterBtn").click( function(){ 
-               // updateImage();
-               
-               var boxVal = $("#letterBox").val();
-               alert(boxVal);
-               
-            } );
-            
-    
-            function updateImage() {
-                
-                //document.getElementById("man").innerHTML = "<img src='img/stick_5.png' >";
-                $("img").attr("src","img/stick_3.png");
-            }
-    
-            
-            var selectedWord = "";
-            var selectedHint = "";
-            var board = "";
-            var remainingGuesses = 6;
-            var words = ["snake", "monkey", "beetle", "octopus", "horse"];
-            var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 
-                            'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 
-                            'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-
-            
-            startGame();
-            
-            function startGame() {
-                
-                pickWord();
-                initBoard();
-                updateBoard();
-                createLetters();
-                
-            }
-            
-            function pickWord() {
-                var randomInt = Math.floor( Math.random() * words.length );
-                selectedWord = words[randomInt];
-                //console.log(selectedWord);
-            }
-            
-            function updateBoard() {
-                for (var letter of board) {
-                    document.getElementById("word").innerHTML += letter + " ";
-                }
-            }
-            
-            function initBoard() {
-                
-                for (var i=0; i < selectedWord.length; i++ ) {
-                    
-                    board += "_";
-                    
-                }
-                
-                console.log(board);
-                
-            }
-            
-            function createLetters(){
-                
-                for (var letter of alphabet) {
-                    
-                    $("#letters").append("<button class='letter' id='"+letter+"'>" + letter + "</button>");
-                }
-                
-            }
-            
-            //events
-            
-            $("button").click( function(){ alert($(this).attr("id")) });
-
-            
-        </script>
-
+        
+        <div id="won">
+            <h2 class="message">You Won!</h2>
+            <button class="replayBtn btn btn-success">Play Again</button>
+        </div>
+        
+        <div id="lost">
+            <h2 class="message">You Lost!</h2>
+            <button class="replayBtn btn btn-warning">Play Again</button>
+        </div>
+        
+        <script src="js/hangman.js"></script>
+        
+    <a href="https://icons8.com">Icon pack by Icons8</a>
     </body>
 </html>

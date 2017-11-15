@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>Roach Bomb Foot</title>
+	    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+		<script language="javascript" type="text/javascript" src="rps.js"></script>
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	</head>
+	<body onload="init()">
+		<div id="gameWindow">
+			<div id="introScreen">
+				<div id="introScreenContent">
+					<h1>Roach Bomb Foot</h1>
+					<div id="btnStart" class="button" onClick="startGame()">Start Game</div>
+				</div>
+			</div>
+			
+			<div id="endScreen">
+				<div id="endScreenContent">
+					<h1 id="txtEndTitle">Something beats Something</h1>
+					<h2 id="txtEndMessage">You Win, Lose, or Tie</h2>
+					<div id="btnReplay" class="button" onclick="replay()">Play Again</div>
+				</div>
+			</div>
+			<div id="btnGo" onclick="go()">GO</div>
+		
+			<div id="playerPanel">
+				<h2>Player</h2>
+				<img id="imgPlayer" src="img/question.png">
+				<br><br>
+				<div id="btnCockRoach" class="iconButton" onclick="select('cockroach')">
+					<img src="img/cockroach.jpg">
+					<br>Roach
+				</div>
+				<div id="btnFoot" class="iconButton" onclick="select('foot')">
+					<img src="img/foot.jpg">
+					<br>Foot
+				</div>
+				<div id="btnBomb" class="iconButton" onclick="select('bomb')">
+					<img src="img/bomb.jpg">
+					<br>Bomb
+				</div>
+			</div>
+
+			<div id="computerPanel">
+				<h2>Computer</h2>
+				<img id="imgComputer" src="img/question.png">
+				<br><br>
+				<div id="lblcockroach" class="iconLabel">
+					<img src="img/cockroach.jpg">
+					<br>Roach
+				</div>
+				<div id="lblfoot" class="iconLabel">
+					<img src="img/foot.jpg">
+					<br>Foot
+				</div>
+				<div id="lblbomb" class="iconLabel">
+					<img src="img/bomb.jpg">
+					<br>Bomb
+				</div>
+			</div>
+
+			
+		</div>
+	</body>
+</html>
+

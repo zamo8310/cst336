@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>AJAX: Sign Up Page</title>
+    <link  href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css" id="diigolet-chrome-css">
+
+ 
+</style>
+
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script>
+
+   
+  
+   
+
+    function checkPassword() {
+                //alert("IS this working??");
+                var pass1=document.getElementById("password1").value;
+                var pass2=document.getElementById("password2").value;
+               
+              //alert(pass1);
+              // $("#validate").innerHTML="WORKING";
+                //alert(pass1);
+                //alert(pass2);
+                if(pass1!=pass2){
+                   
+                  // alert("USERNAME AVAILABLE!");
+                  // $("#user").style.color="green";
+                 alert("Passwords do not match. Please, Re-Enter Password");
+                   
+               } else {
+                   
+                  alert("Passwords match. Validation complete");
+               }
+            
+    
+        
+    }
+
+
+    function clearZip(){
+        $("#error").hide();
+    }
+
+    function clearAvailability(){
+        $("#available").hide();
+        $("#notAvailable").hide();
+    }
+    
+
+
+
+
+    function getCity() {
+        
+        clearZip();
+        //alert($("#zip").val());
+        $.ajax({
+
+            type: "GET",
+            url: "http://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php",
+            dataType: "json",
+            data: { "zip": $("#zip").val()},
+            //error: function(data,status){
+              // alert("working");
+            //},
+            success: function(data,status) {
+                
+            if(!data){
+                 $("#error").show();
+
+                 //alert("There was an error processing your data.");
+            }
+              
+              //alert(data.city);
+              $("#city").html(data.city);
+              $("#lat").html(data.latitude);
+              $("#long").html(data.longitude);
+            
+            },
+          
+            complete: function(data,status) { //optional, used for debugging purposes
+            //alert(status);
+            }
+
+        });//ajax
+        
+    }  //function
+    
+    
+    
+    function getCounties() {
+        
+        //alert("You've selected state: " + $("#stateId").val());
+        $.ajax({
+        
+        type: "GET",
+        url: "http://itcdland.csumb.edu/~milara/ajax/countyList.php",
+        dataType: "json",
+        data: { "state": $("#stateId").val()},
+        success: function(data,status) {
+         //alert(data[0].county)
+         $("#countyId").html("<option> Select One </option>");
+         for (var i=0; i < data.length; i++){
+         $("#countyId").append("<option>"+data[i].county+"</option>");
+         }
+        },
+        complete: function(data,status) { //optional, used for debugging purposes
+        //alert(status);
+        }
+        
+        });//ajax
+    }
+    
+    function checkUsername() {
+        clearAvailability();
+        //alert("hello")
+        //alert($("#username").val());
+        $.ajax({
+
+    
+            type: "GET",
+            url: "checkUsername.php",
+            dataType: "json",
+            data: { "username": $("#username").val()},
+            
+            success: function(data,status) {
+              // alert(data);
+               
+               if (!data) {
+                   
+                  // alert("USERNAME AVAILABLE!");
+                  // $("#user").style.color="green";
+                   $("#available").show();
+                   
+               } else {
+                   
+                   //alert ("username already taken!");
+                   $("#notAvailable").show();
+               }
+            
+            },
+            complete: function(data,status) { //optional, used for debugging purposes
+            //alert(status);
+            }
+            
+            });//ajax
+    }
+    
+    //event handlers
+    
+    $(document).ready(  function(){
+        
+        $("#zip").change( function(){ getCity(); } );
+        $("#stateId").change(function(){ getCounties(); });
+        $("#username").change( function(){ checkUsername(); } );
+       // $(".myForm").submit( function(){ checkPassword(); });
+        
+    } ); //documentReady
+    
+    
+</script>
+
+</head>
+
+<body id="dummybodyid">
+
+   
+      <h1>Sign UP!</h1>
+   
+   
+   <div id="decor"> Adding Dec </div>
+ 
+
+    <form onsubmit = "false" id="myForm">
+    <div class="info">
+        <fieldset>
+           
+            <label>First Name</label><br>
+            <input type="text"><br> 
+            <label>Last Name</label><br>
+            <input type="text"><br> 
+            <label>Email</label><br>
+            <input type="text"><br> 
+            <label>Phone</label><br>       
+            <input type="text"><br>
+            
+            <label>Zip</label><br>
+            <input type="text" id="zip"> 
+            <span id="error"><b>&#10006; Zip code not found</b></span>
+        
+            <br>
+            City: <span id="city"></span> 
+            <br>
+            Latitude: <span id="lat"></span> 
+            <br>
+            Longitude:<span id="long"></span> 
+            <br>
+            
+            
+  
+        
+          <div class="dropdown">
+             
+              <ul class="dropdown-menu">
+                  
+                  
+            State: <select id="stateId" name="state">
+                <option value="">Select One</option>
+                <option value="ca"> California</option>
+                <option value="ny"> New York</option>
+                <option value="tx"> Texas</option>
+                <option value="va"> Virginia</option>
+              </ul>
+            </div>    
+
+            </select><br />
+            Select a County: <select id = "countyId"></select><br>
+            </fieldset>
+            </div>
+
+            <div clas="user">
+            <fieldset>
+           
+            
+            <div class="imgcontainer">
+            <img src="img/add.png" alt="Avatar" class="avatar">
+            </div>
+            
+            <label>Desired Username</label><br>
+            <input type="text" id="username">
+            <span id="available"><b>&#10004; Available</b></span>
+            <span id="notAvailable"><b>&#10006; Not Available</b></span>
+            <br>
+            <label>Password</label><br>
+            <input id="password1" type="password"><br>
+            <label>Re-Type Password</label><br>
+            <input id="password2" type="password">
+            <span id="validate"> These do not match. </span><br>
+           
+            
+            <br>
+            
+            <div id="register">
+            <input type="submit" class="btn" onclick="checkPassword()" value="Sign Up!">
+            </div>
+            <br>
+            </fieldset>
+            </div>
+            
+            
+            <div class="clearfix"></div>
+        <div id="decor2"> Adding Dec </div>
+    </form>
+   
+
+
+
+
+</div></body></html>

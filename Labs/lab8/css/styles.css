@@ -1,0 +1,102 @@
+#dummybodyid{
+    background-image: url("../img/bg3.jpg");
+  
+     /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: bold;
+    color:black;
+}
+
+#validate{
+    display: none;
+    color:black;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+
+}
+.avatar {
+    width: 33%;
+   
+}
+
+.info{
+    float:left;
+    width:50%;
+    height:100%;
+}
+
+.user{
+    float:left;
+    width:50%;
+    height: 100%;
+}
+
+
+.clearfix{
+  clear:both;  
+}
+
+
+#error, #available, #notAvailable, #match, #noMatch{
+   
+    display:none;
+}
+
+#available{
+   
+    color:green;
+    
+}
+
+#notAvailable, #error{
+    color:red;
+}
+
+.imgcontainer{
+    text-align: center;
+}
+
+#decor{
+    color: blue;
+    background-color: blue;
+}
+
+#decor2{
+    color: blue;
+    background-color: blue;
+}
+
+#register{
+    text-align: center;
+}
+
+.container {
+   /* The image used */
+    background-image: url("../img/bg.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+input[type=text], input[type=password] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+   
+    
+}

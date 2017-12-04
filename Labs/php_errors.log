@@ -325,3 +325,18 @@ Stack trace:
 #0 /home/ubuntu/workspace/cs336/cst336/Labs/lab8/checkUsername.php(17): PDOStatement->execute(Array)
 #1 {main}
   thrown in /home/ubuntu/workspace/cs336/cst336/Labs/lab8/checkUsername.php on line 17
+[29-Nov-2017 21:12:48 UTC] PHP Fatal error:  Call to undefined function getPetList() in /home/ubuntu/workspace/cs336/cst336/Labs/lab9/adoptions.php on line 8
+[29-Nov-2017 21:12:48 UTC] PHP Stack trace:
+[29-Nov-2017 21:12:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/Labs/lab9/adoptions.php:0
+[29-Nov-2017 21:23:03 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tcp.adoptees' doesn't exist' in /home/ubuntu/workspace/cs336/cst336/Labs/lab9/adoptions.php:14
+Stack trace:
+#0 /home/ubuntu/workspace/cs336/cst336/Labs/lab9/adoptions.php(14): PDOStatement->execute()
+#1 /home/ubuntu/workspace/cs336/cst336/Labs/lab9/adoptions.php(24): getPetList()
+#2 {main}
+  thrown in /home/ubuntu/workspace/cs336/cst336/Labs/lab9/adoptions.php on line 14
+[29-Nov-2017 21:40:11 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tcp.adoptees' doesn't exist' in /home/ubuntu/workspace/cs336/cst336/Labs/lab9/adoptions.php:14
+Stack trace:
+#0 /home/ubuntu/workspace/cs336/cst336/Labs/lab9/adoptions.php(14): PDOStatement->execute()
+#1 /home/ubuntu/workspace/cs336/cst336/Labs/lab9/adoptions.php(56): getPetList()
+#2 {main}
+  thrown in /home/ubuntu/workspace/cs336/cst336/Labs/lab9/adoptions.php on line 14

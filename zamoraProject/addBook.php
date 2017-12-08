@@ -27,12 +27,12 @@ if (isset($_GET['addBookForm'])){
     //"INSERT INTO `tc_user` (`userId`, `firstName`, `lastName`, `email`, `universityId`, `gender`, `phone`, `role`, `deptId`) VALUES (NULL, 'a', 'a', 'a', '1', 'm', '1', '1', '1');
     
     $sql = "INSERT INTO books
-            (title, author, genre, subgenre, yop, pictureURL, description, votes, id)
+            (title, author, genre, subgenre, yop, pictureURL, description, votes)
             VALUES
-            (:name, :fName, :gen, :sub, :year, :pic, :dScript, :vote, :bId)";
+            (:name, :fName, :gen, :sub, :year, :pic, :dScript, :vote)";
     $namedParameters = array();
     $namedParameters[':name'] =  $title;
-    $namedParameters[':fName'] =  $lauthor;
+    $namedParameters[':fName'] =  $author;
     $namedParameters[':gen'] =  $genre;
     $namedParameters[':sub'] =  $subgenre;
     $namedParameters[':year'] = $yop;

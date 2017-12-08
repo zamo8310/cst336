@@ -30,14 +30,14 @@ if (isset($_GET['updateEventForm'])) { //admin has submitted form to update user
             SET eventName = :eName,
             description = :dScript,
             date = :day,
-            attendance = :attend,
+            attendance = :attend
 			WHERE eventId = :eventId";
 	$namedParameters = array();
+	$namedParameters[":eventId"] = $_GET['eventId'];
 	$namedParameters[":eName"] = $_GET['eventName'];
 	$namedParameters[":dScript"] = $_GET['description'];
-	$namedParameters[":day"] = $_GET['day'];
-	$namedParameters[":attend"] = $_GET['attend'];
-	$namedParameters[":eventId"] = $_GET['eventId'];
+	$namedParameters[":day"] = $_GET['date'];
+	$namedParameters[":attend"] = $_GET['attendance'];
     $stmt = $conn->prepare($sql);
     $stmt->execute($namedParameters);
     
@@ -81,7 +81,7 @@ if (isset($_GET['eventId'])) {
             Date: <input type="date" name="date" required value="<?=$eventInfo['date']?>"/> <br>
             Attendance: <input type="text" name="attendance" required value="<?=$eventInfo['attendance']?>"/> <br>
             
-                <input type="submit" name="updateUserForm" value="Update Event!"/>
+                <input type="submit" name="updateEventForm" value="Update Event!"/>
         </form>
         
     </fieldset>

@@ -18,3 +18,19 @@ Stack trace:
 #0 /home/ubuntu/workspace/cs336/cst336/zamoraProject/addBook.php(45): PDOStatement->execute(Array)
 #1 {main}
   thrown in /home/ubuntu/workspace/cs336/cst336/zamoraProject/addBook.php on line 45
+[08-Dec-2017 21:50:40 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE 1
+			AND eventId LIKE '2'' at line 6' in /home/ubuntu/workspace/cs336/cst336/zamoraProject/updateEvent.php:43
+Stack trace:
+#0 /home/ubuntu/workspace/cs336/cst336/zamoraProject/updateEvent.php(43): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cs336/cst336/zamoraProject/updateEvent.php on line 43
+[08-Dec-2017 21:51:06 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE eventId = '2'' at line 6' in /home/ubuntu/workspace/cs336/cst336/zamoraProject/updateEvent.php:42
+Stack trace:
+#0 /home/ubuntu/workspace/cs336/cst336/zamoraProject/updateEvent.php(42): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cs336/cst336/zamoraProject/updateEvent.php on line 42
+[08-Dec-2017 21:51:24 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE eventId = '2'' at line 6' in /home/ubuntu/workspace/cs336/cst336/zamoraProject/updateEvent.php:42
+Stack trace:
+#0 /home/ubuntu/workspace/cs336/cst336/zamoraProject/updateEvent.php(42): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cs336/cst336/zamoraProject/updateEvent.php on line 42

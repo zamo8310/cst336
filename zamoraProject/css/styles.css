@@ -1,0 +1,29 @@
+#worm{
+    float:left;
+}
+
+
+
+.clearfix{
+  clear:both;  
+}
+
+.navbar-text{
+  float:right;
+}
+
+#loginStyle{
+  text-align: center;
+}
+
+#head{
+  text-align: center;
+}
+
+#moviePage{
+  text-align: center;
+}
+
+#carousel{
+  text-align: center;
+}

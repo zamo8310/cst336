@@ -1,0 +1,131 @@
+[07-Dec-2017 04:37:48 UTC] PHP Fatal error:  Uncaught exception 'Google_Service_Exception' with message '{
+ "error": {
+  "errors": [
+   {
+    "domain": "usageLimits",
+    "reason": "keyInvalid",
+    "message": "Bad Request"
+   }
+  ],
+  "code": 400,
+  "message": "Bad Request"
+ }
+}
+' in /home/ubuntu/workspace/cs336/cst336/practice/api/vendor/google/apiclient/src/Google/Http/REST.php:118
+Stack trace:
+#0 /home/ubuntu/workspace/cs336/cst336/practice/api/vendor/google/apiclient/src/Google/Http/REST.php(94): Google_Http_REST::decodeHttpResponse(Object(GuzzleHttp\Psr7\Response), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#1 [internal function]: Google_Http_REST::doExecute(Object(GuzzleHttp\Client), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#2 /home/ubuntu/workspace/cs336/cst336/practice/api/vendor/google/apiclient/src/Google/Task/Runner.php(176): call_user_func_array(Array, Array)
+#3 /home/ubuntu/workspace/cs336/cst336/practice/api/vendor/google/apiclient/src/Google/Http/REST.php(58): Google_Task_Runner->run()
+#4 /home/ubuntu/workspace/ in /home/ubuntu/workspace/cs336/cst336/practice/api/vendor/google/apiclient/src/Google/Http/REST.php on line 118
+[07-Dec-2017 04:44:44 UTC] PHP Fatal error:  Uncaught exception 'Google_Service_Exception' with message '{
+ "error": {
+  "errors": [
+   {
+    "domain": "usageLimits",
+    "reason": "ipRefererBlocked",
+    "message": "The request did not specify any referer. Please ensure that the client is sending referer or use the API Console to remove the referer restrictions.",
+    "extendedHelp": "https://console.developers.google.com/apis/credentials?project=770261784655"
+   }
+  ],
+  "code": 403,
+  "message": "The request did not specify any referer. Please ensure that the client is sending referer or use the API Console to remove the referer restrictions."
+ }
+}
+' in /home/ubuntu/workspace/cs336/cst336/practice/api/vendor/google/apiclient/src/Google/Http/REST.php:118
+Stack trace:
+#0 /home/ubuntu/workspace/cs336/cst336/practice/api/vendor/google/apiclient/src/Google/Http/REST.php(94): Google_Http_REST::decodeHttpResponse(Object(GuzzleHttp\Psr7\Response), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#1 [internal function]: Google_Http_REST::doExecute(Objec in /home/ubuntu/workspace/cs336/cst336/practice/api/vendor/google/apiclient/src/Google/Http/REST.php on line 118
+[07-Dec-2017 04:45:08 UTC] PHP Fatal error:  Uncaught exception 'Google_Service_Exception' with message '{
+ "error": {
+  "errors": [
+   {
+    "domain": "usageLimits",
+    "reason": "ipRefererBlocked",
+    "message": "The request did not specify any referer. Please ensure that the client is sending referer or use the API Console to remove the referer restrictions.",
+    "extendedHelp": "https://console.developers.google.com/apis/credentials?project=770261784655"
+   }
+  ],
+  "code": 403,
+  "message": "The request did not specify any referer. Please ensure that the client is sending referer or use the API Console to remove the referer restrictions."
+ }
+}
+' in /home/ubuntu/workspace/cs336/cst336/practice/api/vendor/google/apiclient/src/Google/Http/REST.php:118
+Stack trace:
+#0 /home/ubuntu/workspace/cs336/cst336/practice/api/vendor/google/apiclient/src/Google/Http/REST.php(94): Google_Http_REST::decodeHttpResponse(Object(GuzzleHttp\Psr7\Response), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#1 [internal function]: Google_Http_REST::doExecute(Objec in /home/ubuntu/workspace/cs336/cst336/practice/api/vendor/google/apiclient/src/Google/Http/REST.php on line 118
+[07-Dec-2017 04:45:38 UTC] PHP Fatal error:  Uncaught exception 'Google_Service_Exception' with message '{
+ "error": {
+  "errors": [
+   {
+    "domain": "usageLimits",
+    "reason": "ipRefererBlocked",
+    "message": "The request did not specify any referer. Please ensure that the client is sending referer or use the API Console to remove the referer restrictions.",
+    "extendedHelp": "https://console.developers.google.com/apis/credentials?project=770261784655"
+   }
+  ],
+  "code": 403,
+  "message": "The request did not specify any referer. Please ensure that the client is sending referer or use the API Console to remove the referer restrictions."
+ }
+}
+' in /home/ubuntu/workspace/cs336/cst336/practice/api/vendor/google/apiclient/src/Google/Http/REST.php:118
+Stack trace:
+#0 /home/ubuntu/workspace/cs336/cst336/practice/api/vendor/google/apiclient/src/Google/Http/REST.php(94): Google_Http_REST::decodeHttpResponse(Object(GuzzleHttp\Psr7\Response), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#1 [internal function]: Google_Http_REST::doExecute(Objec in /home/ubuntu/workspace/cs336/cst336/practice/api/vendor/google/apiclient/src/Google/Http/REST.php on line 118
+[07-Dec-2017 04:47:27 UTC] PHP Warning:  include_once(/home/ubuntu/workspace/cs336/cst336/practice/api/../vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 17
+[07-Dec-2017 04:47:27 UTC] PHP Stack trace:
+[07-Dec-2017 04:47:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:47:27 UTC] PHP Warning:  include_once(): Failed opening '/home/ubuntu/workspace/cs336/cst336/practice/api/../vendor/autoload.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 17
+[07-Dec-2017 04:47:27 UTC] PHP Stack trace:
+[07-Dec-2017 04:47:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:47:27 UTC] PHP Warning:  include_once(templates/base.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 18
+[07-Dec-2017 04:47:27 UTC] PHP Stack trace:
+[07-Dec-2017 04:47:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:47:27 UTC] PHP Warning:  include_once(): Failed opening 'templates/base.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 18
+[07-Dec-2017 04:47:27 UTC] PHP Stack trace:
+[07-Dec-2017 04:47:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:47:27 UTC] PHP Fatal error:  Call to undefined function pageHeader() in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 19
+[07-Dec-2017 04:47:27 UTC] PHP Stack trace:
+[07-Dec-2017 04:47:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:48:05 UTC] PHP Warning:  include_once(/home/ubuntu/workspace/cs336/cst336/practice/api../vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 17
+[07-Dec-2017 04:48:05 UTC] PHP Stack trace:
+[07-Dec-2017 04:48:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:48:05 UTC] PHP Warning:  include_once(): Failed opening '/home/ubuntu/workspace/cs336/cst336/practice/api../vendor/autoload.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 17
+[07-Dec-2017 04:48:05 UTC] PHP Stack trace:
+[07-Dec-2017 04:48:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:48:05 UTC] PHP Warning:  include_once(templates/base.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 18
+[07-Dec-2017 04:48:05 UTC] PHP Stack trace:
+[07-Dec-2017 04:48:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:48:05 UTC] PHP Warning:  include_once(): Failed opening 'templates/base.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 18
+[07-Dec-2017 04:48:05 UTC] PHP Stack trace:
+[07-Dec-2017 04:48:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:48:05 UTC] PHP Fatal error:  Call to undefined function pageHeader() in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 19
+[07-Dec-2017 04:48:05 UTC] PHP Stack trace:
+[07-Dec-2017 04:48:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:48:49 UTC] PHP Warning:  include_once(/home/ubuntu/workspace/cs336/cst336/practice/apivendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 17
+[07-Dec-2017 04:48:49 UTC] PHP Stack trace:
+[07-Dec-2017 04:48:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:48:49 UTC] PHP Warning:  include_once(): Failed opening '/home/ubuntu/workspace/cs336/cst336/practice/apivendor/autoload.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 17
+[07-Dec-2017 04:48:49 UTC] PHP Stack trace:
+[07-Dec-2017 04:48:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:48:49 UTC] PHP Warning:  include_once(templates/base.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 18
+[07-Dec-2017 04:48:49 UTC] PHP Stack trace:
+[07-Dec-2017 04:48:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:48:49 UTC] PHP Warning:  include_once(): Failed opening 'templates/base.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 18
+[07-Dec-2017 04:48:49 UTC] PHP Stack trace:
+[07-Dec-2017 04:48:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:48:49 UTC] PHP Fatal error:  Call to undefined function pageHeader() in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 19
+[07-Dec-2017 04:48:49 UTC] PHP Stack trace:
+[07-Dec-2017 04:48:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:49:12 UTC] PHP Warning:  include_once(templates/base.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 18
+[07-Dec-2017 04:49:12 UTC] PHP Stack trace:
+[07-Dec-2017 04:49:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:49:12 UTC] PHP Warning:  include_once(): Failed opening 'templates/base.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 18
+[07-Dec-2017 04:49:12 UTC] PHP Stack trace:
+[07-Dec-2017 04:49:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:49:12 UTC] PHP Fatal error:  Call to undefined function pageHeader() in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 19
+[07-Dec-2017 04:49:12 UTC] PHP Stack trace:
+[07-Dec-2017 04:49:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0
+[07-Dec-2017 04:50:23 UTC] PHP Fatal error:  Call to undefined function pageHeader() in /home/ubuntu/workspace/cs336/cst336/practice/api/index.php on line 19
+[07-Dec-2017 04:50:23 UTC] PHP Stack trace:
+[07-Dec-2017 04:50:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/cs336/cst336/practice/api/index.php:0

@@ -1,58 +1,67 @@
-   <!DOCTYPE html>
-<html>
-  <head>
-    <title>YouTube Data API Quickstart</title>
-    <meta charset='utf-8' />
-    <script>
-     function getProduct() {
-      
-        $.ajax({
-
+  <html>
+    <head>
+        <title> Snacks Search </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        
+        <link  href="css/styles.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    </head>
+      <style>
+          body{
+              text-align:center;
+          }
+      </style>
     
-            type: "GET",
-            url: "api.php",
-            dataType: "json",
-            data: { "product": $("#product").val()},
-            
-            success: function(data,status) {
-             //alert(data[0].county)
-                 
-               if (!data) {
-                   
-                  alert("No data found");
-                  // $("#user").style.color="green";
-                 
-                   
-               } else {
-                   
-                   alert (data.val());
-                 
-               }
-            },
-            complete: function(data,status) { //optional, used for debugging purposes
-            //alert(status);
-            }
-            
-            });//ajax
-    }
-    
+    <body>
      
-    $(document).ready(  function(){
+            
+            <h1><img src="img/snacks.png" alt="snackbar logo" ></h1>
+        <h2>Search for all your favorite snacks here! </h2>
         
-        $("#zip").change( function(){ getCity(); } );
-        $("#stateId").change(function(){ getCounties(); });
-        $("#product").change( function(){ getProduct(); } );
-       // $(".myForm").submit( function(){ checkPassword(); });
+        </br> </br>
         
-    } ); //documentReady
+        <form onsubmit="return checkSearches(document.forms['menuSearch'])" id="menuSearch">
+            Snack:
+            <input type="text"  name="product" id="product" required>
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+        
+        <div id="summary"></div>
+        
+            
+         
+        
+        
+        
+    </body>
+    <script>
+       
+        
+        function checkSearches(mform) {
+          var product = $("#product").val();
+          alert(product);
+       
+       $.ajax({
+           method: "GET",
+           url: "handleSearch.php?product=",
+           data:{
+               "product":product
+           },
+           dataType: "json",
+           success:function(data) {
+             html= "The product " + product + " " + "has been searched for" + " " + Object.keys(data).length + " time(s)" + "<br>history:";
+            html+="<ul>";
+            for(i=0; i<Object.keys(data).length; i++){
+                html += "<ol>" + data[i].history + "</ol>";
+            }
+            html+="</ul>";
+            $('#summary').html(html);
+
+           }
+       });
+       return false;
+        }
     </script>
-  </head>
-  <body>
-   
-   <form>
-   Search Product: <input type=text id="product"><br>
-   </form>
-   
-   
-  </body>
 </html>

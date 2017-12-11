@@ -4,7 +4,7 @@
 function getDatabaseConnection(){
     
     $host = 'localhost';//cloud 9
-    $dbname = 'tp';
+    $dbname = 'inventory';
     $username = 'root';
     $password = '';
     
